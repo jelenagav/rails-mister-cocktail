@@ -1,0 +1,8 @@
+<h1>Add a Dose </h1>
+
+
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.input :description %>
+  <%= f.input :ingredient_id, collection: Ingredient.all, prompt: 'choose one' %>
+  <%= f.submit "add a review", class: "btn btn" %>
+<% end %>
