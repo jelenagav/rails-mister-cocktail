@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
+  resources :articles
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
- resources :cocktails, only: [:index, :new, :show, :create] do resources :doses, only: [:new, :create, :destroy]
- end
+   resources :cocktails, only: [:index, :new, :show, :create] do
+   resources :doses, only: [:new, :create, :destroy]
+   end
 end
 
-# A user can see the list of cocktails
-# GET "cocktails/42"
-# GET "cocktails/new"
-# POST "cocktails"
-
+ Rails.application.routes.draw do
+  resources :articles
+   root to: 'articles#index'
+   resources :articles, except: :index
+ end

@@ -1,10 +1,24 @@
 <p> Cocktails </p>
 
 
-<ul class="list-group">
-  <% @cocktails.each do |cocktail| %>
-    <li class="list-item"><%= cocktail.name %><%= link_to "show", cocktail =%></li>
-  <% end %>
-</ul>
 
-<button type="button" class="btn btn-secondary"><%= link_to 'Add cocktail', new_cocktail_path %></button>
+<div class="container">
+
+  <div class="cards">
+   <% @cocktails.each do |cocktail| %>
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg);">
+      <div class="card-description">
+        <h2><%= cocktail.name %> <%= link_to "show", cocktail =%> </h2>
+      </div>
+    </div>
+
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+
+<!--  -->
